@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623EC0D0F72F000981E51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1F2AF2500F026639000B733E /* texture1-128.pvr4 in Resources */ = {isa = PBXBuildFile; fileRef = 1F2AF24F0F026639000B733E /* texture1-128.pvr4 */; };
+		1F6F60DC0F05AEEF00D8F4EA /* uvcube2.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F60DA0F05AEEF00D8F4EA /* uvcube2.mtl */; };
+		1F6F60DD0F05AEEF00D8F4EA /* uvcube2.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F60DB0F05AEEF00D8F4EA /* uvcube2.obj */; };
+		1F6F613A0F05B25A00D8F4EA /* cube_template_Cube-256.pvr4 in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F61390F05B25A00D8F4EA /* cube_template_Cube-256.pvr4 */; };
+		1F6F62DC0F0692DF00D8F4EA /* sphere-256.pvr4 in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F62DB0F0692DF00D8F4EA /* sphere-256.pvr4 */; };
+		1F6F62DF0F0692E300D8F4EA /* earth.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F62DD0F0692E300D8F4EA /* earth.mtl */; };
+		1F6F62E00F0692E300D8F4EA /* earth.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F62DE0F0692E300D8F4EA /* earth.obj */; };
+		1F6F63620F07E08E00D8F4EA /* OpenGLWaveFrontObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F63520F07E08E00D8F4EA /* OpenGLWaveFrontObject.m */; };
+		1F6F63630F07E08E00D8F4EA /* OpenGLWaveFrontGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F63550F07E08E00D8F4EA /* OpenGLWaveFrontGroup.m */; };
+		1F6F63640F07E08E00D8F4EA /* OpenGLTexture3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F63560F07E08E00D8F4EA /* OpenGLTexture3D.m */; };
+		1F6F63650F07E08E00D8F4EA /* OpenGLWaveFrontMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F63570F07E08E00D8F4EA /* OpenGLWaveFrontMaterial.m */; };
+		1F6F63660F07E08E00D8F4EA /* Wavefront_OBJ_LoaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F635A0F07E08E00D8F4EA /* Wavefront_OBJ_LoaderAppDelegate.m */; };
+		1F6F63670F07E08E00D8F4EA /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F635D0F07E08E00D8F4EA /* GLViewController.m */; };
+		1F6F63680F07E08E00D8F4EA /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F63600F07E08E00D8F4EA /* GLView.m */; };
+		1F6F636B0F07E09600D8F4EA /* gluLookAt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F636A0F07E09600D8F4EA /* gluLookAt.m */; };
+		1FD86C2F0EFAF95500911736 /* plane3.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 1FD86C2D0EFAF95500911736 /* plane3.mtl */; };
+		1FD86C300EFAF95500911736 /* plane3.obj in Resources */ = {isa = PBXBuildFile; fileRef = 1FD86C2E0EFAF95500911736 /* plane3.obj */; };
+		1FF0216C0EF21FA500761551 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FF0216B0EF21FA500761551 /* MainWindow.xib */; };
+		2D500B940D5A79C200DBA0E3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */; };
+		2D500B9A0D5A79CF00DBA0E3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* Wavefront OBJ Loader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wavefront OBJ Loader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F2AF24F0F026639000B733E /* texture1-128.pvr4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texture1-128.pvr4"; sourceTree = "<group>"; };
+		1F3B9A820EF2151B00286867 /* Wavefront_OBJ_Loader_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wavefront_OBJ_Loader_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		1F6F60DA0F05AEEF00D8F4EA /* uvcube2.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uvcube2.mtl; sourceTree = "<group>"; };
+		1F6F60DB0F05AEEF00D8F4EA /* uvcube2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uvcube2.obj; sourceTree = "<group>"; };
+		1F6F61390F05B25A00D8F4EA /* cube_template_Cube-256.pvr4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cube_template_Cube-256.pvr4"; sourceTree = "<group>"; };
+		1F6F62DB0F0692DF00D8F4EA /* sphere-256.pvr4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sphere-256.pvr4"; sourceTree = "<group>"; };
+		1F6F62DD0F0692E300D8F4EA /* earth.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = earth.mtl; sourceTree = "<group>"; };
+		1F6F62DE0F0692E300D8F4EA /* earth.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = earth.obj; sourceTree = "<group>"; };
+		1F6F63520F07E08E00D8F4EA /* OpenGLWaveFrontObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLWaveFrontObject.m; path = Classes/OpenGLWaveFrontObject.m; sourceTree = "<group>"; };
+		1F6F63530F07E08E00D8F4EA /* OpenGLTexture3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLTexture3D.h; path = Classes/OpenGLTexture3D.h; sourceTree = "<group>"; };
+		1F6F63540F07E08E00D8F4EA /* Wavefront_OBJ_LoaderAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wavefront_OBJ_LoaderAppDelegate.h; path = Classes/Wavefront_OBJ_LoaderAppDelegate.h; sourceTree = "<group>"; };
+		1F6F63550F07E08E00D8F4EA /* OpenGLWaveFrontGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLWaveFrontGroup.m; path = Classes/OpenGLWaveFrontGroup.m; sourceTree = "<group>"; };
+		1F6F63560F07E08E00D8F4EA /* OpenGLTexture3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLTexture3D.m; path = Classes/OpenGLTexture3D.m; sourceTree = "<group>"; };
+		1F6F63570F07E08E00D8F4EA /* OpenGLWaveFrontMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpenGLWaveFrontMaterial.m; path = Classes/OpenGLWaveFrontMaterial.m; sourceTree = "<group>"; };
+		1F6F63580F07E08E00D8F4EA /* OpenGLWaveFrontObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLWaveFrontObject.h; path = Classes/OpenGLWaveFrontObject.h; sourceTree = "<group>"; };
+		1F6F63590F07E08E00D8F4EA /* OpenGLWaveFrontGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLWaveFrontGroup.h; path = Classes/OpenGLWaveFrontGroup.h; sourceTree = "<group>"; };
+		1F6F635A0F07E08E00D8F4EA /* Wavefront_OBJ_LoaderAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wavefront_OBJ_LoaderAppDelegate.m; path = Classes/Wavefront_OBJ_LoaderAppDelegate.m; sourceTree = "<group>"; };
+		1F6F635B0F07E08E00D8F4EA /* OpenGLWaveFrontMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLWaveFrontMaterial.h; path = Classes/OpenGLWaveFrontMaterial.h; sourceTree = "<group>"; };
+		1F6F635C0F07E08E00D8F4EA /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLView.h; path = Classes/GLView.h; sourceTree = "<group>"; };
+		1F6F635D0F07E08E00D8F4EA /* GLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLViewController.m; path = Classes/GLViewController.m; sourceTree = "<group>"; };
+		1F6F635E0F07E08E00D8F4EA /* GLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLViewController.h; path = Classes/GLViewController.h; sourceTree = "<group>"; };
+		1F6F635F0F07E08E00D8F4EA /* ConstantsAndMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConstantsAndMacros.h; path = Classes/ConstantsAndMacros.h; sourceTree = "<group>"; };
+		1F6F63600F07E08E00D8F4EA /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLView.m; path = Classes/GLView.m; sourceTree = "<group>"; };
+		1F6F63610F07E08E00D8F4EA /* OpenGLWaveFrontCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLWaveFrontCommon.h; path = Classes/OpenGLWaveFrontCommon.h; sourceTree = "<group>"; };
+		1F6F63690F07E09600D8F4EA /* gluLookAt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gluLookAt.h; path = Classes/gluLookAt.h; sourceTree = "<group>"; };
+		1F6F636A0F07E09600D8F4EA /* gluLookAt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = gluLookAt.m; path = Classes/gluLookAt.m; sourceTree = "<group>"; };
+		1FD86C2D0EFAF95500911736 /* plane3.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plane3.mtl; sourceTree = "<group>"; };
+		1FD86C2E0EFAF95500911736 /* plane3.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plane3.obj; sourceTree = "<group>"; };
+		1FF0216B0EF21FA500761551 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				1D3623EC0D0F72F000981E51 /* CoreGraphics.framework in Frameworks */,
+				2D500B940D5A79C200DBA0E3 /* OpenGLES.framework in Frameworks */,
+				2D500B9A0D5A79CF00DBA0E3 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Wavefront OBJ Loader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F6FE4750EF5CE0E0056D7EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F6F62DB0F0692DF00D8F4EA /* sphere-256.pvr4 */,
+				1F6F62DD0F0692E300D8F4EA /* earth.mtl */,
+				1F6F62DE0F0692E300D8F4EA /* earth.obj */,
+				1F6F61390F05B25A00D8F4EA /* cube_template_Cube-256.pvr4 */,
+				1F6F60DA0F05AEEF00D8F4EA /* uvcube2.mtl */,
+				1F6F60DB0F05AEEF00D8F4EA /* uvcube2.obj */,
+				1F2AF24F0F026639000B733E /* texture1-128.pvr4 */,
+				1FD86C2D0EFAF95500911736 /* plane3.mtl */,
+				1FD86C2E0EFAF95500911736 /* plane3.obj */,
+			);
+			path = Models;
+			sourceTree = SOURCE_ROOT;
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				2D500B1D0D5A766B00DBA0E3 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1F3B9A820EF2151B00286867 /* Wavefront_OBJ_Loader_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F6FE4750EF5CE0E0056D7EB /* Models */,
+				1FF0216B0EF21FA500761551 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */,
+				2D500B990D5A79CF00DBA0E3 /* QuartzCore.framework */,
+				2D500B920D5A79C200DBA0E3 /* OpenGLES.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1F6F63690F07E09600D8F4EA /* gluLookAt.h */,
+				1F6F636A0F07E09600D8F4EA /* gluLookAt.m */,
+				1F6F635F0F07E08E00D8F4EA /* ConstantsAndMacros.h */,
+				1F6F63610F07E08E00D8F4EA /* OpenGLWaveFrontCommon.h */,
+				1F6F63540F07E08E00D8F4EA /* Wavefront_OBJ_LoaderAppDelegate.h */,
+				1F6F635A0F07E08E00D8F4EA /* Wavefront_OBJ_LoaderAppDelegate.m */,
+				1F6F63530F07E08E00D8F4EA /* OpenGLTexture3D.h */,
+				1F6F63560F07E08E00D8F4EA /* OpenGLTexture3D.m */,
+				1F6F63590F07E08E00D8F4EA /* OpenGLWaveFrontGroup.h */,
+				1F6F63550F07E08E00D8F4EA /* OpenGLWaveFrontGroup.m */,
+				1F6F635B0F07E08E00D8F4EA /* OpenGLWaveFrontMaterial.h */,
+				1F6F63570F07E08E00D8F4EA /* OpenGLWaveFrontMaterial.m */,
+				1F6F63580F07E08E00D8F4EA /* OpenGLWaveFrontObject.h */,
+				1F6F63520F07E08E00D8F4EA /* OpenGLWaveFrontObject.m */,
+				1F6F635C0F07E08E00D8F4EA /* GLView.h */,
+				1F6F63600F07E08E00D8F4EA /* GLView.m */,
+				1F6F635E0F07E08E00D8F4EA /* GLViewController.h */,
+				1F6F635D0F07E08E00D8F4EA /* GLViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Wavefront OBJ Loader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Wavefront OBJ Loader" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wavefront OBJ Loader";
+			productName = foo;
+			productReference = 1D6058910D05DD3D006BFB54 /* Wavefront OBJ Loader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Wavefront OBJ Loader" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Wavefront OBJ Loader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FF0216C0EF21FA500761551 /* MainWindow.xib in Resources */,
+				1FD86C2F0EFAF95500911736 /* plane3.mtl in Resources */,
+				1FD86C300EFAF95500911736 /* plane3.obj in Resources */,
+				1F2AF2500F026639000B733E /* texture1-128.pvr4 in Resources */,
+				1F6F60DC0F05AEEF00D8F4EA /* uvcube2.mtl in Resources */,
+				1F6F60DD0F05AEEF00D8F4EA /* uvcube2.obj in Resources */,
+				1F6F613A0F05B25A00D8F4EA /* cube_template_Cube-256.pvr4 in Resources */,
+				1F6F62DC0F0692DF00D8F4EA /* sphere-256.pvr4 in Resources */,
+				1F6F62DF0F0692E300D8F4EA /* earth.mtl in Resources */,
+				1F6F62E00F0692E300D8F4EA /* earth.obj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1F6F63620F07E08E00D8F4EA /* OpenGLWaveFrontObject.m in Sources */,
+				1F6F63630F07E08E00D8F4EA /* OpenGLWaveFrontGroup.m in Sources */,
+				1F6F63640F07E08E00D8F4EA /* OpenGLTexture3D.m in Sources */,
+				1F6F63650F07E08E00D8F4EA /* OpenGLWaveFrontMaterial.m in Sources */,
+				1F6F63660F07E08E00D8F4EA /* Wavefront_OBJ_LoaderAppDelegate.m in Sources */,
+				1F6F63670F07E08E00D8F4EA /* GLViewController.m in Sources */,
+				1F6F63680F07E08E00D8F4EA /* GLView.m in Sources */,
+				1F6F636B0F07E09600D8F4EA /* gluLookAt.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeff LaMarche";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Wavefront_OBJ_Loader_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = "Wavefront OBJ Loader";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E8697D3E-D91C-4956-8E17-435631A01E6E";
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = GLGravity;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Wavefront OBJ Loader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Wavefront OBJ Loader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

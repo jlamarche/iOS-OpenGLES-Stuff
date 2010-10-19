@@ -1,0 +1,12 @@
+build
+*.xcodeproj/*.pbxuser
+*.xcodeproj/*.perspectivev3
+.DS_Store
+.Spotlight-V100
+*.hidden
+*.Trash
+/tmp/**
+*.hotfiles.btree
+/.vol
+.svn
+.svn/*
