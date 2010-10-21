@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'Hello GL' target in the 'Hello GL' project
+//
+#define __IPHONE_OS_VERSION_MIN_REQUIRED __IPHONE_3_0 
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif

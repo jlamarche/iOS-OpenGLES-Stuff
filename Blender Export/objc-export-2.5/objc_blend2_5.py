@@ -8,7 +8,7 @@ bl_addon_info = {
     'name': 'Export: Objective C header (.h)',
     'author': 'Jeff, Paul',
     'version': '1.0',
-    'blender': (2, 5, 3),
+    'blender': (2, 5, 4),
     'location': 'File > Export',
     'description': 'Export Objective C header file (.h)',
     'warning': '', # used for warning icon and text in addons panel
