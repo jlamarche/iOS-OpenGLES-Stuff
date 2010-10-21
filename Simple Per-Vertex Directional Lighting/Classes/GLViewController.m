@@ -13,7 +13,7 @@
     GLuint      matrixUniform;
     GLuint      textureUniform;
     GLuint      lightDirectionUniform;
-    GLuint      lightColorUniform;
+    GLuint      lightDiffuseColorUniform;
 
 
     Matrix3D    rotationMatrix;
@@ -65,7 +65,7 @@
     matrixUniform = [program uniformIndex:@"matrix"];
     textureUniform = [program uniformIndex:@"texture"];
     lightDirectionUniform = [program uniformIndex:@"lightDirection"];
-    lightColorUniform = [program uniformIndex:@"lightColor"];
+    lightDiffuseColorUniform = [program uniformIndex:@"lightDiffuseColor"];
 
 
     glEnable(GL_DEPTH_TEST);
@@ -309,7 +309,7 @@
     glUniform1i (textureUniform, 0);
     
     glUniform4f(lightDirectionUniform, 1.0, 0.75, 0.25, 1.0);
-    glUniform4f(lightColorUniform, 0.8, 0.8, 1.0, 1.0);
+    glUniform4f(lightDiffuseColorUniform, 0.8, 0.8, 1.0, 1.0);
 
     
     glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices) / sizeof(Vertex3D));
