@@ -3,18 +3,14 @@
 #import "GLView.h"
 #import "GLViewController.h"
 
-// START:extension
 @interface GLView ()
 {
     GLint               backingWidth; 
     GLint               backingHeight;
     GLuint              frameBuffer; 
     GLuint              renderBuffer;
-    // START_HIGHLIGHT
     GLuint              depthBuffer;
-    // END_HIGHLIGHT
 }
-// END:extension
 @property (nonatomic, getter=isAnimating) BOOL animating;
 @property (nonatomic, retain) EAGLContext *context;
 @property (nonatomic, retain) CADisplayLink *displayLink;
@@ -51,7 +47,6 @@
     }
     return self;
 }
-// START:createbuffers
 - (void)createBuffers
 {
     glGenFramebuffers(1, &frameBuffer);
@@ -63,31 +58,26 @@
     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &backingWidth);
     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &backingHeight);
     
-    // START_HIGHLIGHT
     glGenRenderbuffers(1, &depthBuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, depthBuffer);
     glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, backingWidth, backingHeight);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthBuffer);
-    // END_HIGHLIGHT
 }
-// END:createbuffers
-// START:destroybuffers
+
 - (void)destroyBuffers
 {
     glDeleteFramebuffers(1, &frameBuffer);
     frameBuffer = 0;
     glDeleteRenderbuffers(1, &renderBuffer);
     renderBuffer = 0;
-    
-    // START_HIGHLIGHT
+
     if(depthBuffer) 
     {
         glDeleteRenderbuffers(1, &depthBuffer);
         depthBuffer = 0;
     }
-    // END_HIGHLIGHT
 }
-// END:destroybuffers
+
 - (void)drawView
 {    
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
@@ -153,7 +143,6 @@
         animating = NO;
     }
 }
-// START:dealloc
 - (void)dealloc
 {
     [controller release], controller = nil;
@@ -168,13 +157,11 @@
         glDeleteRenderbuffers(1, &renderBuffer);
         renderBuffer = 0;
     }
-    // START_HIGHLIGHT
     if (depthBuffer)
     {
         glDeleteRenderbuffers(1, &depthBuffer);
         depthBuffer = 0;
     }
-    // END_HIGHLIGHT
     
     if ([EAGLContext currentContext] == self.context)
         [EAGLContext setCurrentContext:nil];
@@ -185,5 +172,4 @@
     
     [super dealloc];
 }
-// END:dealloc
 @end

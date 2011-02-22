@@ -96,7 +96,6 @@
 		1FB38EF911DD2D5C00047889 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				1F75C74011ED443800367218 /* DieTexture.png */,
 				1F8EF33911DD2F2A001816D2 /* Shader.fsh */,
 				1F8EF33A11DD2F2A001816D2 /* Shader.vsh */,
 			);
@@ -128,6 +127,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1F75C74011ED443800367218 /* DieTexture.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Hello_GL-Info.plist */,
 			);

@@ -1,0 +1,9 @@
+This version was kindly updated and fixed by John Becker for Blender 2.5 beta 6. Instead of using the AddOn pane in preferences, this version should be installed by dropping the two files in the following path:
+
+[path to Blender.app]/Contents/MacOS/2.56/scripts/op/
+
+So, if you install Blender in the default location, that would be:
+
+/Applications/blender/blender.app/Contents/MacOS/2.56/scripts/op/
+
+
