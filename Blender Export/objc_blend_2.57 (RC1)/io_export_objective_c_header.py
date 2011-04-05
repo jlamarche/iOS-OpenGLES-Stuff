@@ -30,7 +30,6 @@ import bpy
 import mathutils
 
 def triangulateNMesh(object):
-	global bDeleteMergeMesh
 	bneedtri = False
 	scene = bpy.context.scene
 	bpy.ops.object.mode_set(mode='OBJECT')
@@ -60,10 +59,9 @@ def triangulateNMesh(object):
 		bpy.context.scene.update()
 		bpy.ops.object.mode_set(mode='OBJECT') # set it in object
 		print("Triangulate Mesh Done!")
-		if bDeleteMergeMesh == True:
-			print("Remove Merge tmp Mesh [ " ,object.name, " ] from scene!" )
-			bpy.ops.object.mode_set(mode='OBJECT') # set it in object
-			bpy.context.scene.objects.unlink(object)
+		print("Remove Merge tmp Mesh [ " ,object.name, " ] from scene!" )
+		bpy.ops.object.mode_set(mode='OBJECT') # set it in object
+		bpy.context.scene.objects.unlink(object)
 	else:
 		print("No need to convert tri mesh.")
 		me_ob = object
