@@ -29,15 +29,74 @@ import shutil
 import bpy
 import mathutils
 
+def triangulateNMesh(object):
+	global bDeleteMergeMesh
+	bneedtri = False
+	scene = bpy.context.scene
+	bpy.ops.object.mode_set(mode='OBJECT')
+	for i in scene.objects: i.select = False #deselect all objects
+	object.select = True
+	scene.objects.active = object #set the mesh object to current
+#	bpy.ops.object.mode_set(mode='OBJECT')
+	print("Checking mesh if needs to convert quad to Tri...")
+	for face in object.data.faces:
+		if (len(face.vertices) > 3):
+			bneedtri = True
+			break
+	
+	bpy.ops.object.mode_set(mode='OBJECT')
+	if bneedtri == True:
+		print("Converting quad to tri mesh...")
+		me_da = object.data.copy() #copy data
+		me_ob = object.copy() #copy object
+		#note two copy two types else it will use the current data or mesh
+		me_ob.data = me_da
+		bpy.context.scene.objects.link(me_ob)#link the object to the scene #current object location
+		for i in scene.objects: i.select = False #deselect all objects
+		me_ob.select = True
+		scene.objects.active = me_ob #set the mesh object to current
+		bpy.ops.object.mode_set(mode='EDIT') #Operators
+		bpy.ops.mesh.select_all(action='SELECT')#select all the face/vertex/edge
+		bpy.ops.mesh.quads_convert_to_tris() #Operators
+		bpy.context.scene.update()
+		bpy.ops.object.mode_set(mode='OBJECT') # set it in object
+		print("Triangulate Mesh Done!")
+		if bDeleteMergeMesh == True:
+			print("Remove Merge tmp Mesh [ " ,object.name, " ] from scene!" )
+			bpy.ops.object.mode_set(mode='OBJECT') # set it in object
+			bpy.context.scene.objects.unlink(object)
+	else:
+		print("No need to convert tri mesh.")
+		me_ob = object
+	return me_ob
+
+
 def writeString(file, string):
 	file.write(bytes(string, 'UTF-8'))
 	
 def do_export(context, props, filepath):
 	mat_x90 = mathutils.Matrix.Rotation(-math.pi/2, 4, 'X')
 	ob = context.active_object
+	me_ob = triangulateNMesh(ob)
 	current_scene = context.scene	
 	apply_modifiers = props.apply_modifiers
-	mesh = ob.to_mesh(current_scene, apply_modifiers, 'PREVIEW')
+	# 
+	# bpy.ops.object.mode_set(mode='OBJECT')
+	# me_da = ob.data.copy() #copy data
+	# me_ob = ob.copy() #copy object
+
+	
+	# bpy.context.scene.objects.link(me_ob)
+	# for i in current_scene.objects: i.select = False #deselect all objects
+	# me_ob.select = True
+	# current_scene.objects.active = me_ob #set the mesh object to current
+	# bpy.ops.object.mode_set(mode='EDIT') #Operators
+	# bpy.ops.mesh.select_all(action='SELECT')#select all the face/vertex/edge
+	# bpy.ops.mesh.quads_convert_to_tris() #Operators
+	# bpy.context.scene.update()
+	# bpy.ops.object.mode_set(mode='OBJECT') # set it in object
+
+	mesh = me_ob.to_mesh(current_scene, apply_modifiers, 'PREVIEW')
 	
 	basename = mesh.name.capitalize()
 	
@@ -47,7 +106,15 @@ def do_export(context, props, filepath):
 	if props.rot_x90:
 		mesh.transform(mat_x90)
 		
-	bpy.ops.mesh.quads_convert_to_tris() 
+	#mesh.select = True
+	# 
+	# #current_scene.objects.active = mesh #set the mesh object to current
+	# bpy.ops.object.mode_set(mode='EDIT') #Operators
+	# bpy.ops.mesh.select_all(action='SELECT')#select all the face/vertex/edge
+	# bpy.ops.mesh.quads_convert_to_tris() #Operators
+	# current_scene.update()
+	# bpy.ops.object.mode_set(mode='OBJECT') # set it in object
+	# bpy.ops.mesh.quads_convert_to_tris() 
 
 	file = open(filepath, "wb") 
 	theHeader = '//If not using MC3D, change 1 to 0 to add needed types\n#if 1\n\t#import "MC3DTypes.h"\n#else\n\
@@ -192,6 +259,7 @@ typedef vertexData* vertexDataPtr;\n\n\n')
 	
 	file.flush()
 	file.close()
+
 	return True
 
 
