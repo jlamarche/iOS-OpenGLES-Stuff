@@ -33,29 +33,22 @@ def writeString(file, string):
 	file.write(bytes(string, 'UTF-8'))
 	
 def do_export(context, props, filepath):
-	#mat_x90 = mathutils.Matrix.Rotation(-math.pi/2, 4, 'X')
+	mat_x90 = mathutils.Matrix.Rotation(-math.pi/2, 4, 'X')
 	ob = context.active_object
 	current_scene = context.scene	
 	apply_modifiers = props.apply_modifiers
 	mesh = ob.to_mesh(current_scene, apply_modifiers, 'PREVIEW')
 	
 	basename = mesh.name.capitalize()
-	# current_scene.objects.active = mesh #set the mesh object to current
-	# bpy.ops.object.mode_set(mode='EDIT') #Operators
-	# bpy.ops.mesh.select_all(action='SELECT')#select all the face/vertex/edge
-	# bpy.ops.mesh.quads_convert_to_tris() #Operators
-	# current_scene.update()
-	# bpy.ops.object.mode_set(mode='OBJECT') # set it in object
 	
-	# apply_modifiers = props.apply_modifiers
-	#	mesh = ob.to_mesh(sc, apply_modifiers, 'PREVIEW')
-	#	vertCount = len(me.vertices)
-	#	sampletimes = getSampling(start, end, sampling)
-	#	sampleCount = len(sampletimes)
+	if props.world_space:
+		mesh.transform(ob.matrix_world)
+
+	if props.rot_x90:
+		mesh.transform(mat_x90)
 
 	file = open(filepath, "wb") 
-	theHeader = '//#import "MC3DTypes.h"\n\n\n// If not using MC3D, change 0 to 1 to add needed types\n\
-#if 0\n\
+	theHeader = '//If not using MC3D, change 1 to 0 to add needed types\n#if 1\n\t#import "MC3DTypes.h"\n#else\n\
 	struct texCoord\n\
 	{\n\
 		GLfloat		u;\n\
@@ -212,9 +205,13 @@ class Export_objc(bpy.types.Operator, ExportHelper):
 							description="Applies the Modifiers",
 							default=True)
 
-	# rot_x90 = BoolProperty(name="Convert to Y-up",
-	#						description="Rotate 90 degrees around X to convert to y-up",
-	#						default=True)
+	rot_x90 = BoolProperty(name="Convert to Y-up",
+							description="Rotate 90 degrees around X to convert to y-up",
+							default=True)
+	
+	world_space = BoolProperty(name="Export into Worldspace",
+							description="Transform the Vertexcoordinates into Worldspace",
+							default=False)
 
 	
 	@classmethod
