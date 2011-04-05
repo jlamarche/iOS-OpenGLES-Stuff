@@ -46,6 +46,8 @@ def do_export(context, props, filepath):
 
 	if props.rot_x90:
 		mesh.transform(mat_x90)
+		
+	mesh.quads_convert_to_tris() 
 
 	file = open(filepath, "wb") 
 	theHeader = '//If not using MC3D, change 1 to 0 to add needed types\n#if 1\n\t#import "MC3DTypes.h"\n#else\n\
