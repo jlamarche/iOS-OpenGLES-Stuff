@@ -212,7 +212,7 @@
     glVertexAttribPointer(textureCoordinateAttribute, 2, GL_FLOAT, 0, 0, textureCoordinates);
     glEnableVertexAttribArray(textureCoordinateAttribute);
     
-    static const Vector3D rotationVector = {1.f, 1.f, 1.f};
+    static const  rotationVector = {1.f, 1.f, 1.f};
     Matrix3DSetRotationByDegrees(rotationMatrix, rot, rotationVector);
     Matrix3DSetTranslation(translationMatrix, 0.f, 0.f, -3.f);
     Matrix3DMultiply(translationMatrix, rotationMatrix, modelViewMatrix);
