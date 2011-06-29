@@ -23,7 +23,8 @@ import mathutils, math, struct
 import os
 from os import remove
 import time
-from io_utils import ExportHelper
+import bpy_extras
+from bpy_extras.io_utils import ExportHelper 
 import time
 import shutil
 import bpy
