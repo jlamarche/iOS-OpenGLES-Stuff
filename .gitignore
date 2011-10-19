@@ -10,3 +10,5 @@ build
 /.vol
 .svn
 .svn/*
+*DerivedData*
+*xcuserdata/.*
