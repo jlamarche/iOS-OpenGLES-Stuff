@@ -1,0 +1,37 @@
+Contents of /Users/jeff/Dropbox/OpenGL ES Workshop/GLBaseEffect Drawing Example with Texture/blah/blah-Prefix.pch
+3.0 (tags/Apple/clang-211.10.1) (based on LLVM 3.0svn)
+i386-apple-darwin11.2.0
+-x
+objective-c
+-arch
+i386
+-fmessage-length=0
+-fdiagnostics-print-source-range-info
+-fdiagnostics-show-category=id
+-fdiagnostics-parseable-fixits
+-std=gnu99
+-fobjc-arc
+-fpascal-strings
+-O0
+-DDEBUG=1
+-isysroot
+/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk
+-fexceptions
+-fasm-blocks
+-mmacosx-version-min=10.6
+-gdwarf-2
+-fobjc-abi-version=2
+-fobjc-legacy-dispatch
+-DIBOutlet=__attribute__((iboutlet))
+-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))
+-DIBAction=void)__attribute__((ibaction)
+-D__IPHONE_OS_VERSION_MIN_REQUIRED=50000
+-iquote
+-iquote
+-I/Users/jeff/Dropbox/OpenGL ES Workshop/GLBaseEffect Drawing Example with Texture/build/Debug-iphonesimulator/include
+-F/Users/jeff/Dropbox/OpenGL ES Workshop/GLBaseEffect Drawing Example with Texture/build/Debug-iphonesimulator
+-ferror-limit=10
+-working-directory=/Users/jeff/Dropbox/OpenGL ES Workshop/GLBaseEffect Drawing Example with Texture
+-Xclang
+-detailed-preprocessing-record
+SDK_PRODUCT_BUILD_VERSION=9A334
