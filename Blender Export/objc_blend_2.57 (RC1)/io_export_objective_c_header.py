@@ -161,7 +161,7 @@ typedef vertexDataTextured* vertexDataTexturedPtr;\n\n\n')
 typedef struct vertexDataColored vertexDataColored;\n\
 typedef vertexDataColored* vertexDataColoredPtr;\n\n\n')
 		writeString(file, 'static const vertexDataColored %sVertexData[] = {\n' % basename)
-		color_layer = mesh.active_vertex_color
+		color_layer = mesh.vertex_colors.active
 		for face in mesh.faces:
 			if len(face.vertices) == 3:
 				faceC = color_layer.data[face.index]
