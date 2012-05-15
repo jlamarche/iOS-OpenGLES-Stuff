@@ -1,0 +1,15 @@
+Installing the Blender 2.57 Objective-C Export Script:
+
+1) Launch Blender 2.57
+2) Select "User Preferences" from the File menu
+3) Navigate to the "Add-Ons" tab
+4) In the lower-left corner of the window, click the button that reads "Install Add-On…"
+5) Find io_export_objective_c_header.py in your file system and select it
+6) Click the "Import/Export" button on the left side to show only the Import/Export add-ons
+7) Look for an item called "Import/Export: Export Objective-C Header (.h)". Click the checkbox associated with that row to enable the script
+8) Close the User Preferences window
+9) Select "Save User Settings" from the File menu
+
+Now, under the File->Export menu, there will be an option to export the selected object as an Objective-C header file.
+
+When you add the add-on to the application, it will copy the script into the application's bundle, however whether a script is enabled is stored in Blender's user settings, which is why it's important to save the user settings as a final step. When adding an add-on, you should make sure not to change anything else besides the steps above until you've saved the user settings. Any other changes you make will get saved as the default Blender step as well.
