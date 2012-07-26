@@ -38,6 +38,7 @@ def triangulateNMesh(object):
 	object.select = True
 	scene.objects.active = object #set the mesh object to current
 	print("Checking mesh if needs to convert quad to Tri...")
+	object.data.update(calc_tessface=True)
 	for face in object.data.tessfaces:
 		if (len(face.vertices) > 3):
 			bneedtri = True
