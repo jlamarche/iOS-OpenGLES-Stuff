@@ -147,15 +147,15 @@ typedef void (*GLLogFunction) (GLuint program,
 - (NSString *)vertexShaderLog
 {
     return [self logForOpenGLObject:vertShader 
-                       infoCallback:(GLInfoFunction)&glGetProgramiv 
-                            logFunc:(GLLogFunction)&glGetProgramInfoLog];
+                       infoCallback:(GLInfoFunction)&glGetShaderiv
+                            logFunc:(GLLogFunction)&glGetShaderInfoLog];
     
 }
 - (NSString *)fragmentShaderLog
 {
     return [self logForOpenGLObject:fragShader 
-                       infoCallback:(GLInfoFunction)&glGetProgramiv 
-                            logFunc:(GLLogFunction)&glGetProgramInfoLog];
+                       infoCallback:(GLInfoFunction)&glGetShaderiv
+                            logFunc:(GLLogFunction)&glGetShaderInfoLog];
 }
 - (NSString *)programLog
 {
