@@ -139,18 +139,31 @@ typedef struct vertexDataTextured vertexDataTextured;\n\
 typedef vertexDataTextured* vertexDataTexturedPtr;\n\n\n')
 		writeString(file, 'static const vertexDataTextured %sVertexData[] = {\n' % basename)
 		#for face in uv: #loop through the faces
-		uv_layer = mesh.uv_textures.active
-		for face in mesh.tessfaces:
-			faceUV = uv_layer.data[face.index]
-			i=0
-			for index in face.vertices:
-				if len(face.vertices) == 3:
-					vert = mesh.vertices[index]
-					writeString(file, '\t{/*v:*/{%f, %f, %f}, ' % (vert.co.x, vert.co.y, vert.co.z) )
-					writeString(file, '/*n:*/{%f, %f, %f}, ' % (vert.normal.x, vert.normal.y, vert.normal.z))
-					writeString(file, '/*t:*/{%f, %f}' % ( faceUV.uv[i][0], faceUV.uv[i][1] ) )
-					writeString(file, '},\n')
-					i+=1
+		#uv_layer = mesh.uv_layers.active
+		#for face in mesh.tessfaces:
+		#	faceUV = uv_layer.data[face.index]
+		#	i=0
+		#	for index in face.vertices:
+		#		if len(face.vertices) == 3:
+		#			vert = mesh.vertices[index]
+		#			writeString(file, '\t{/*v:*/{%f, %f, %f}, ' % (vert.co.x, vert.co.y, vert.co.z) )
+		#			writeString(file, '/*n:*/{%f, %f, %f}, ' % (vert.normal.x, vert.normal.y, vert.normal.z))
+		#			writeString(file, '/*t:*/{%f, %f}' % ( faceUV.uv[i][0], faceUV.uv[i][1] ) )
+		#			writeString(file, '},\n')
+		#			i+=1
+		# Print all the vertices using mesh.loops
+		uv_layer = mesh.uv_layers.active.data
+		for poly in mesh.polygons:
+			#writeString(file, "// Polygon index: %d, length: %d\n" % (poly.index, poly.loop_total))
+			# range is used here to show how the polygons reference loops,
+			# for convenience 'poly.loop_indices' can be used instead.
+			for loop_index in range(poly.loop_start, poly.loop_start + poly.loop_total):
+				i=mesh.loops[loop_index].vertex_index
+				vert=mesh.vertices[i]
+				writeString(file, '\t{/*v:*/{%f, %f, %f}, ' % (vert.co.x, vert.co.y, vert.co.z) )
+				writeString(file, '/*n:*/{%f, %f, %f}, ' % (vert.normal.x, vert.normal.y, vert.normal.z) )
+				writeString(file, '/*t:*/{%f, %f}' % ( uv_layer[loop_index].uv[0], uv_layer[loop_index].uv[1] ) )
+				writeString(file, '},\n')
 		writeString(file, '};\n\n')
 	elif len(mesh.vertex_colors) > 0:
 		writeString(file, 'struct vertexDataColored\n\
