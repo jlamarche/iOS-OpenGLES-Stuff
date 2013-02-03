@@ -161,7 +161,7 @@ typedef vertexDataTextured* vertexDataTexturedPtr;\n\n\n')
 				i=mesh.loops[loop_index].vertex_index
 				vert=mesh.vertices[i]
 				writeString(file, '\t{/*v:*/{%f, %f, %f}, ' % (vert.co.x, vert.co.y, vert.co.z) )
-				writeString(file, '/*n:*/{%f, %f, %f}, ' % (vert.normal.x, vert.normal.y, vert.normal.z) )
+				writeString(file, '/*n:*/{%f, %f, %f}, ' % (vert.normal.x, vert.normal.z, -vert.normal.y) )
 				writeString(file, '/*t:*/{%f, %f}' % ( uv_layer[loop_index].uv[0], uv_layer[loop_index].uv[1] ) )
 				writeString(file, '},\n')
 		writeString(file, '};\n\n')
@@ -182,8 +182,8 @@ typedef vertexDataColored* vertexDataColoredPtr;\n\n\n')
 				i=0
 				for index in face.vertices:
 					vert = mesh.vertices[index]
-					writeString(file, '\t{/*v:*/{%f, %f, %f}, ' % (vert.co.x, vert.co.y, vert.co.z) )
-					writeString(file, '/*n:*/{%f, %f, %f}, ' % (vert.normal.x, vert.normal.y, vert.normal.z))
+					writeString(file, '\t{/*v:*/{%f, %f, %f}, ' % (vert.co.y, vert.co.z, vert.co.x) )
+					writeString(file, '/*n:*/{%f, %f, %f}, ' % (vert.normal.x, vert.normal.z, -vert.normal.y))
 					writeString(file, '/*c:*/{%f, %f, %f, %f}' % ( faceC.color1[i], faceC.color2[i], faceC.color3[i], faceC.color4[i]) )
 					writeString(file, '},\n')
 					i+=1
