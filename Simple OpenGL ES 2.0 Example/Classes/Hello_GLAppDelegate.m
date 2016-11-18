@@ -8,11 +8,24 @@
 - (BOOL)application:(UIApplication *)application 
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 {    
-    [window addSubview:rootController.view];
+    //[window addSubview:rootController.view];
     rootController.view.frame = window.frame;
     rootController.view.contentScaleFactor = window.contentScaleFactor;
     [window makeKeyAndVisible];
 	[(GLView *)rootController.view startAnimation];
+    
+      // Set RootViewController to window
+    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
+    {
+        // warning: addSubView doesn't work on iOS6
+        [window addSubview: rootController.view];
+    }
+    else
+    {
+        // use this method on ios6
+        [window setRootViewController:rootController];
+    }
+    [window makeKeyAndVisible];
 
 	return YES;
 }
